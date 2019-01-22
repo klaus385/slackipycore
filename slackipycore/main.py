@@ -10,7 +10,7 @@ deactivate_api_url = "https://{team_id}.slack.com/api/users.admin.setInactive"
 users_api_url = ("https://{team_id}.slack.com/api/users.list?"
                  "token={api_token}&presence=1")
 team_api_url = "https://{team_id}.slack.com/api/team.info?token={api_token}"
-@ main.py:19 @ def invite(team_id, api_token, invitee_email):
+def invite(team_id, api_token, invitee_email):
     url = invite_api_url.format(team_id=team_id)
     payload = {'email': invitee_email, 'token': api_token}
     r = requests.post(url, data=payload)
